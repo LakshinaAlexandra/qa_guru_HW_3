@@ -54,15 +54,16 @@ public class TextBoxTests {
 // Сохранение
         $("#submit").click();
 // Проверки
-        $x("//tbody//tr[1]").shouldHave(text("Aleksandra Lak"));
-        $x("//tbody//tr[2]").shouldHave(text("AleksandraLak@example.com"));
-        $x("//tbody//tr[3]").shouldHave(text("Female"));
-        $x("//tbody//tr[4]").shouldHave(text("9997776655"));
-        $x("//tbody//tr[5]").shouldHave(text("20 May,1970"));
-        $x("//tbody//tr[6]").shouldHave(text("Hindi, Biology"));
-        $x("//tbody//tr[7]").shouldHave(text("Sports"));
-        $x("//tbody//tr[8]").shouldHave(text("олень.jpeg"));
-        $x("//tbody//tr[9]").shouldHave(text("My current address"));
-        $x("//tbody//tr[10]").shouldHave(text("Haryana Panipat"));
+        $(".modal-content").shouldHave(
+                text("Aleksandra Lak"),
+                text("AleksandraLak@example.com"),
+                text("Female"),
+                text("9997776655"),
+                text("20 May,1970"),
+                text("Hindi, Biology"),
+                text("Sports"),
+                text("олень.jpeg"),
+                text("My current address"),
+                text("Haryana Panipat"));
     }
 }
