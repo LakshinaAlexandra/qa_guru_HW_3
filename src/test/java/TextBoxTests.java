@@ -17,7 +17,10 @@ public class TextBoxTests {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
-
+// Remove banner
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+//
         $("#firstName").setValue("Aleksandra");
         $("#lastName").setValue("Lak");
         $("#userEmail").setValue("AleksandraLak@example.com");
@@ -27,10 +30,8 @@ public class TextBoxTests {
         $("#userNumber").setValue("9997776655");
 // Дата
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").click();
-        $(byText("May")).click();
-        $(".react-datepicker__year-select").click();
-        $(byText("1970")).click();
+        $(".react-datepicker__month-select").$(byText("May")).click();
+        $(".react-datepicker__year-select").$(byText("1970")).click();
         $(".react-datepicker__day.react-datepicker__day--020").click();
 // Multiple select
         $("#subjectsInput").setValue("n");
@@ -44,12 +45,10 @@ public class TextBoxTests {
 // Адрес
         $("#currentAddress").setValue("My current address");
 // Drop down list - 1
-        $x("(//div[contains(@class, 'css-tlfecz-indicatorContainer')])[2]").click();
+        $("#state").click();
         $(byText("Haryana")).click();
-// Клик в пустое место
-        $("#stateCity-label").click();
 // Drop down list - 2
-        $x("(//div[contains(@class, 'css-tlfecz-indicatorContainer')])[3]").click();
+        $("#city").click();
         $(byText("Panipat")).click();
 // Сохранение
         $("#submit").click();
